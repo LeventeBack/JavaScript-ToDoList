@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+*,*::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: rgb(64, 169, 255);
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+.to-do-title  {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+}
+.to-do-title h1 {
+    margin: 0
+}
+.add-to-do-container {
+    background-color: white;
+    min-width: 400px;
+    margin-bottom: 40px;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+.add-to-do-form {
+    display: flex;
+    justify-content: space-between;
+}
+.add-to-do-container input {
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0.5em 1.5em;
+    flex: 1;
+    border-radius: 7px;
+}
+.add-to-do-container button {
+    margin:6px;
+    padding: 5px 20px;
+    background-color: rgb(0, 107, 194);
+    border: 1px solid black;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 7px;
+    outline: none;
+}
+.to-do-list-container  {
+    background-color: white;
+    min-width: 400px;
+    min-height: 300px;   
+    border: 1px solid black;
+    border-radius: 7px;
+    color: rgb(66, 66, 66);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.to-do-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.to-do-controls .remover {
+    cursor: pointer;
+}
+.to-do-controls .remover:hover {
+    text-decoration: underline;
+}
+.to-do-item {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid rgb(58, 58, 58);
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+.to-do-item input[type='checkbox'] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.to-do-item label{
+    flex: 1;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+}
+.to-do-item label::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    border: 0.05em solid black;
+    border-radius: 0.15em;
+    margin-right: .5em;
+    margin-left: -.5em;
+    padding: 0.5em;
+    align-self: center;
+}
+.to-do-item label:hover::before,
+.to-do-item input[type='checkbox']:hover + label::before{
+    background-color: rgb(176, 255, 183);
+
+}
+.to-do-item input[type='checkbox']:checked ~ label {
+    text-decoration: line-through;
+}
+.to-do-item input[type='checkbox']:checked ~ label::before {  
+    content: '\002714';
+    background-color: rgb(48, 165, 58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.to-do-item i.fa-trash-alt {
+    cursor: pointer;
+    font-size: 0.95em;
+    margin-left: 0.5em;
+    background: rgb(255, 76, 76);
+    color: white;
+    border-radius: 0.2em;
+    padding: 0.4em;
+    margin: -0.4em
+}
+.to-do-item i.fa-trash-alt:hover {
+    background: rgb(190, 56, 56);
+}
+/*Dragging part*/
+.dragging {
+    cursor: move;
+    opacity: 0.6;
+}
+span.fa-grip-lines {
+    margin-left: -7px;
+    margin-right: 7px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="to-do-title"><h1>TO DO LIST</h1></div>
+    <div class="add-to-do-container">
+        <form class="add-to-do-form" data-add-task-form>
+            <input type="text"data-add-task-input>
+            <button type="submit">ADD</button>
+        </form>
+    </div>
+
+
+    <div class="to-do-list-container">
+        <div class="to-do-list-item-contaioner" data-task-item-container></div>
+        <div class="to-do-controls" data-drag>
+            <span class="remover" data-delete-completed-tasks>Remove all completed tasks</span>
+        </div>
+    </div>
+
+    <template id="task-template">
+        <div class="to-do-item" draggable="true" data-task data-drag>
+            <span class="fas fa-grip-lines"></span>
+            <input type="checkbox" >
+            <label ></label>      
+            <i class='fas fa-trash-alt'></i>
+        </div>
+    </template>
+</body>
+</html>  
